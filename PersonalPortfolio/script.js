@@ -1,124 +1,103 @@
-// DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const headerOffset = 80;
-                const elementPosition = targetSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Fade in animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe all sections for fade in effect
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.classList.add('fade-in');
-        observer.observe(section);
-    });
-    
-    // Header background change on scroll
-    const header = document.querySelector('header');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            header.style.backdropFilter = 'none';
-        }
-    });
-    
-    // Active navigation highlight
-    const sections2 = document.querySelectorAll('section');
-    const navLinks2 = document.querySelectorAll('nav a');
-    
-    window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections2.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const sectionHeight = section.clientHeight;
-            if (sectionTop <= 150 && sectionTop + sectionHeight > 150) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks2.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Project cards hover effect enhancement
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.background = 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.background = '#f8f9fa';
-        });
-    });
-    
-    // Welcome message
-    console.log('🎉 Welcome to my portfolio! Thanks for visiting.');
-    
-    // Contact form validation (if you add a contact form later)
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-        });
-    }
-});
+/* ===== Helpers ===== */
+const $ = (sel, parent = document) => parent.querySelector(sel);
+const $$ = (sel, parent = document) => [...parent.querySelectorAll(sel)];
 
-// Loading animation
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-    
-    // Add a subtle entrance animation
-    const mainContent = document.querySelector('main');
-    mainContent.style.opacity = '0';
-    mainContent.style.transform = 'translateY(20px)';
-    
-    setTimeout(() => {
-        mainContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        mainContent.style.opacity = '1';
-        mainContent.style.transform = 'translateY(0)';
-    }, 100);
+/* ===== Dynamic Year ===== */
+$("#year").textContent = new Date().getFullYear();
+
+/* ===== Mobile Menu ===== */
+const menuToggle = $("#menuToggle");
+const navLinks = $("#navLinks");
+menuToggle?.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+});
+$$("#navLinks a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+
+/* ===== Active Link on Scroll ===== */
+const sections = $$("section[id]");
+const linkObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const id = entry.target.getAttribute("id");
+    const link = $(`.nav-links a[href="#${id}"]`);
+    if (entry.isIntersecting) {
+      $$(".nav-links a").forEach(a => a.classList.remove("active"));
+      link?.classList.add("active");
+    }
+  });
+}, { threshold: 0.6 });
+sections.forEach(sec => linkObserver.observe(sec));
+
+/* ===== Typing Effect ===== */
+const typingEl = $(".typing");
+const roles = [
+  "a Web Developer",
+  "a Coding Samurai Intern",
+  "a Problem Solver",
+  "a Lifelong Learner"
+];
+let r = 0, i = 0, deleting = false;
+function type() {
+  const current = roles[r];
+  typingEl.textContent = current.slice(0, i);
+  if (!deleting && i < current.length) { i++; setTimeout(type, 90); }
+  else if (!deleting && i === current.length) { deleting = true; setTimeout(type, 1100); }
+  else if (deleting && i > 0) { i--; setTimeout(type, 40); }
+  else { deleting = false; r = (r + 1) % roles.length; setTimeout(type, 120); }
+}
+type();
+
+/* ===== Reveal on Scroll ===== */
+const revealEls = $$(".reveal, .p-card");
+const revealObs = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.18 });
+revealEls.forEach(el => revealObs.observe(el));
+
+/* ===== Stat Counters ===== */
+const nums = $$(".num");
+const statObserver = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = +el.dataset.count;
+    let value = 0;
+    const step = Math.max(1, Math.floor(target / 60));
+    const tick = () => {
+      value += step;
+      if (value >= target) value = target;
+      el.textContent = value;
+      if (value < target) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    statObserver.unobserve(el);
+  });
+}, { threshold: 0.6 });
+nums.forEach(n => statObserver.observe(n));
+
+/* ===== Contact Form (basic client-side validation + message) ===== */
+const form = $("#contactForm");
+const formStatus = $("#formStatus");
+form?.addEventListener("submit", (e)=>{
+  e.preventDefault();
+  const data = new FormData(form);
+  const name = (data.get("name") || "").toString().trim();
+  const email = (data.get("email") || "").toString().trim();
+  const message = (data.get("message") || "").toString().trim();
+
+  if (!name || !email || !message) {
+    formStatus.textContent = "Please fill out all fields.";
+    return;
+  }
+  // Demo success
+  formStatus.textContent = "Sending…";
+  setTimeout(()=>{
+    formStatus.textContent = `Thanks, ${name}! I’ll get back to you soon.`;
+    form.reset();
+  }, 800);
 });
