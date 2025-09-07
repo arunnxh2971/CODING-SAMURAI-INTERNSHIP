@@ -4,7 +4,7 @@ const products = [
   {
     id: 'c1',
     name: 'Classic Leather Jacket',
-    image: '/assets/ferrarijacket.jpg',
+    image: 'assets/ferrarijacket.jpg',
     description: 'High-quality leather jacket for a timeless look.',
     price: 149.99,
     rating: 4.8,
@@ -13,7 +13,7 @@ const products = [
   {
     id: 'c4',
     name: 'Denim Jeans',
-    image: '/assets/denim.jpeg',
+    image: 'assets/denim.jpeg',
     description: 'Classic blue denim jeans for all occasions.',
     price: 49.99,
     rating: 4.2,
@@ -22,7 +22,7 @@ const products = [
   {
     id: 'c5',
     name: 'Graphic T-Shirt',
-    image: '/assets/graphic.jpg',
+    image: 'assets/graphic.jpg',
     description: 'Trendy graphic tee for casual style.',
     price: 19.99,
     rating: 4.1,
@@ -31,7 +31,7 @@ const products = [
   {
     id: 'c6',
     name: 'Hooded Sweatshirt',
-    image: '/assets/hood.webp',
+    image: 'assets/hood.webp',
     description: 'Comfortable hoodie for everyday wear.',
     price: 34.99,
     rating: 4.3,
@@ -40,7 +40,7 @@ const products = [
   {
     id: 'c7',
     name: 'Casual Shirt',
-    image: '/assets/casual.jpeg',
+    image: 'assets/casual.jpeg',
     description: 'Lightweight Shirt for warm weather.',
     price: 24.99,
     rating: 4.0,
@@ -49,7 +49,7 @@ const products = [
   {
     id: 'c8',
     name: 'Formal Shirt',
-    image: '/assets/formal.webp',
+    image: 'assets/formal.webp',
     description: 'Elegant shirt for formal occasions.',
     price: 39.99,
     rating: 4.4,
@@ -58,7 +58,7 @@ const products = [
   {
     id: 'c9',
     name: 'Winter Coat',
-    image: '/assets/winter.jpeg',
+    image: 'assets/winter.jpeg',
     description: 'Warm coat for cold days.',
     price: 99.99,
     rating: 4.6,
@@ -67,7 +67,7 @@ const products = [
   {
     id: 'c10',
     name: 'Sports Tracksuit',
-    image: '/assets/sport.jpeg',
+    image: 'assets/sport.jpeg',
     description: 'Comfortable tracksuit for workouts.',
     price: 54.99,
     rating: 4.2,
@@ -77,7 +77,7 @@ const products = [
   {
     id: 'w1',
     name: 'Elegant Watch',
-    image: '/assets/watch.jpeg',
+    image: 'assets/watch.jpeg',
     description: 'Luxury watch for the modern professional.',
     price: 209.99,
     rating: 4.9,
@@ -86,7 +86,7 @@ const products = [
   {
     id: 'w2',
     name: 'Sport Watch',
-    image: '/assets/sportswatch.jpeg',
+    image: 'assets/sportswatch.jpeg',
     description: 'Durable watch for sports and outdoor activities.',
     price: 129.99,
     rating: 4.5,
@@ -95,7 +95,7 @@ const products = [
   {
     id: 'w3',
     name: 'Smart Watch',
-    image: '/assets/smartwatch.jpg',
+    image: 'assets/smartwatch.jpg',
     description: 'Feature-rich smartwatch for tech lovers.',
     price: 179.99,
     rating: 4.7,
@@ -104,7 +104,7 @@ const products = [
   {
     id: 'w4',
     name: 'Classic Analog Watch',
-    image: '/assets/analog.jpeg',
+    image: 'assets/analog.jpeg',
     description: 'Timeless analog watch for everyday use.',
     price: 89.99,
     rating: 4.3,
@@ -113,7 +113,7 @@ const products = [
   {
     id: 'w5',
     name: 'Luxury Gold Watch',
-    image: '/assets/lux.jpeg',
+    image: 'assets/lux.jpeg',
     description: 'Premium gold watch for special occasions.',
     price: 299.99,
     rating: 4.8,
@@ -122,7 +122,7 @@ const products = [
   {
     id: 'w6',
     name: 'Minimalist Watch',
-    image: '/assets/min.jpg',
+    image: 'assets/min.jpg',
     description: 'Sleek minimalist design for modern style.',
     price: 109.99,
     rating: 4.2,
@@ -131,7 +131,7 @@ const products = [
   {
     id: 'w7',
     name: 'Digital Watch',
-    image: '/assets/dig.jpeg',
+    image: 'assets/dig.jpeg',
     description: 'Easy-to-read digital watch for convenience.',
     price: 59.99,
     rating: 4.0,
@@ -140,7 +140,7 @@ const products = [
   {
     id: 'w10',
     name: 'Vintage Watch',
-    image: '/assets/vintage2.jpeg',
+    image: 'assets/vintage2.jpeg',
     description: 'Classic vintage style for collectors.',
     price: 119.99,
     rating: 4.5,
