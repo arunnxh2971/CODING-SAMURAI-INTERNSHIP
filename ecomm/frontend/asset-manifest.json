@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.1846fc93.js",
-    "index.html": "/index.html",
-    "main.1846fc93.js.map": "/static/js/main.1846fc93.js.map"
+    "main.js": "/CODING-SAMURAI-INTERNSHIP/ecomm/frontend/static/js/main.1846fc93.js",
+    "index.html": "/CODING-SAMURAI-INTERNSHIP/ecomm/frontend/index.html",
+    "main.1846fc93.js.map": "/CODING-SAMURAI-INTERNSHIP/ecomm/frontend/static/js/main.1846fc93.js.map"
   },
   "entrypoints": [
     "static/js/main.1846fc93.js"
