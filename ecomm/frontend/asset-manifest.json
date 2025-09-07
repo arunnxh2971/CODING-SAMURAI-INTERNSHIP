@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/CODING-SAMURAI-INTERNSHIP/ecomm/frontend/static/js/main.1846fc93.js",
+    "main.js": "/CODING-SAMURAI-INTERNSHIP/ecomm/frontend/static/js/main.0dc401f4.js",
     "index.html": "/CODING-SAMURAI-INTERNSHIP/ecomm/frontend/index.html",
-    "main.1846fc93.js.map": "/CODING-SAMURAI-INTERNSHIP/ecomm/frontend/static/js/main.1846fc93.js.map"
+    "main.0dc401f4.js.map": "/CODING-SAMURAI-INTERNSHIP/ecomm/frontend/static/js/main.0dc401f4.js.map"
   },
   "entrypoints": [
-    "static/js/main.1846fc93.js"
+    "static/js/main.0dc401f4.js"
   ]
 }
