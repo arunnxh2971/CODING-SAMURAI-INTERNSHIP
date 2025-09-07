@@ -32,19 +32,19 @@ const ProductCard = ({ product }) => {
       }}
       elevation={4}
     >
-            <CardMedia
-        component="img"
-        height="200"
-        image={product.image}
-        alt={product.name}
-        sx={{
-          objectFit: 'contain', // Change from 'cover' to 'contain'
-          background: '#f0f4f8',
-          borderRadius: '16px 16px 0 0',
-          boxShadow: 2,
-          padding: 2 // Add padding for better fit
-        }}
-      />
+        <CardMedia
+  component="img"
+  height="200"
+  image={process.env.PUBLIC_URL + '/' + product.image}
+  alt={product.name}
+  sx={{
+    objectFit: 'contain',
+    background: '#f0f4f8',
+    borderRadius: '16px 16px 0 0',
+    boxShadow: 2,
+    padding: 2
+  }}
+/>
       
       <CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
