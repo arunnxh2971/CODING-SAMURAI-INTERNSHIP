@@ -1,0 +1,166 @@
+/* General Styles */
+/* Removed invalid CSS, see body selector below for correct styles */
+h1 {
+  text-align: center;
+  color: #3571b8;
+  margin-bottom: 28px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+/* ...existing code... */
+
+/* Modern input style for to-do input */
+.container input[type="text"] {
+  width: 75%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 8px;
+  font-size: 1.1rem;
+  color: #222;
+  background: #e3f2fd;
+  box-shadow: 0 2px 8px rgba(70,130,199,0.08);
+}
+.app {
+  margin-top: 50px;
+  background: #395ece;
+  padding: 20px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.container {
+  background: #4682c7;
+  width: 600px;
+  margin: 60px auto 0 auto;
+  padding: 48px 40px 36px 40px;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(70,130,199,0.15);
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  /* Removed stray, invalid CSS properties and closing brace */
+.container button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  background: #1746a2;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.filter-btn {
+  background: #1746a2;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin: 10px 5px 0 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  margin: 0;
+  padding: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.app {
+  margin-top: 50px;
+  background: #1c3faa;
+  padding: 20px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+h1 {
+  text-align: center;
+  color: #cce4ff;
+}
+
+/* Input section */
+.todo-input {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.todo-input button {
+  background: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.todo-input button:hover {
+  background: #007bff;
+}
+
+/* Task list */
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#taskList li {
+  background: #2a5298;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#taskList li.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.controls button {
+  flex: 1;
+  margin: 5px;
+  padding: 8px;
+  background: #004085;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.controls button.active,
+.controls button:hover {
+  background: #007bff;
+}
